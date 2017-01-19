@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>心里的女神</title>
+    <style>
+
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #ffa5a5;
+        }
+
+        .chest {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .heart {
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
+            animation: beat 0.7s ease 0s infinite normal;
+        }
+
+        .side {
+            top: 100px;
+            width: 220px;
+            height: 220px;
+            /*设置圆角*/
+            border-radius: 0 50% 50% 50%;
+           }
+
+        .center {
+            width: 210px;
+            height: 210px;
+            left: 145px;
+            bottom: 100px;
+            /*transform: rotateZ(225deg);*/
+            /*颜色渐变*/
+            background: linear-gradient(-45deg, #B80734 0%, #d5093c 40%);
+            border-radius: 10px;
+        }
+        .right {
+            right: 62px;
+        }
+        .left {
+            transform: rotate(-45deg);
+            left: 62px;
+        }
+
+        @font-face {font-family: 'myfont';
+            src: url('font/iconfont.eot'); /* IE9*/
+            src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+            url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        .left::after{
+            font-family:"myfont";
+            /*\e601前后都能加文字*/
+            content: "梦中女神\e601";
+            display: block;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 50px;
+            transform: rotate(160deg);
+            position: absolute;
+            color: #02E6FF;
+            right: 60px;
+            bottom: 75px;
+            z-index: 5;
+        }
+
+        .top{
+            z-index: 3;
+        }
+        @keyframes beat {
+            0% {/*放大缩小，旋转一定角度，增加阴影呈现立体的效果*/
+                transform: scale(1) rotate(225deg);
+                box-shadow:0 0 40px #d5093c;
+            }
+
+            50% {
+                transform: scale(1.1) rotate(225deg);
+                box-shadow:0 0 70px #d5093c;
+            }
+            100% {
+                transform: scale(1) rotate(225deg);
+
+                box-shadow:0 0 40px #d5093c;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="chest">
+    <div class="heart left side top"></div>
+    <div class="heart center">
+    </div>
+    <div class="heart right side"></div>
+</div>
+</body>
+</html>
